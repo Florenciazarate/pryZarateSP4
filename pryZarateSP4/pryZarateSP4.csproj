@@ -6,6 +6,11 @@
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
+    <ApplicationIcon>kingdom_animals_wildlife_mammal_animal_hedgehog_icon_266140.ico</ApplicationIcon>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="kingdom_animals_wildlife_mammal_animal_hedgehog_icon_266140.ico" />
+  </ItemGroup>
 
 </Project>
