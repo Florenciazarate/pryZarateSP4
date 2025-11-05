@@ -224,7 +224,7 @@
             dgvGanador.Name = "dgvGanador";
             dgvGanador.ReadOnly = true;
             dgvGanador.RowHeadersVisible = false;
-            dgvGanador.Size = new Size(403, 190);
+            dgvGanador.Size = new Size(403, 104);
             dgvGanador.TabIndex = 8;
             // 
             // clmPuesto
