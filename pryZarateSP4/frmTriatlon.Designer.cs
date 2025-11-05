@@ -34,6 +34,9 @@
             btnSalir = new Button();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             dgvParticipantes = new DataGridView();
+            clmNumero = new DataGridViewTextBoxColumn();
+            clmNombre = new DataGridViewTextBoxColumn();
+            clmPais = new DataGridViewTextBoxColumn();
             lblParticipantes = new Label();
             lblPosiciones = new Label();
             dataGridView1 = new DataGridView();
@@ -51,9 +54,6 @@
             dataGridViewTextBoxColumn5 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn6 = new DataGridViewTextBoxColumn();
             lblGanador = new Label();
-            clmNumero = new DataGridViewTextBoxColumn();
-            clmNombre = new DataGridViewTextBoxColumn();
-            clmPais = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dgvParticipantes).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
@@ -91,16 +91,38 @@
             btnSalir.TabIndex = 2;
             btnSalir.Text = "Salir";
             btnSalir.UseVisualStyleBackColor = false;
+            btnSalir.Click += btnSalir_Click;
             // 
             // dgvParticipantes
             // 
+            dgvParticipantes.AllowUserToAddRows = false;
+            dgvParticipantes.AllowUserToDeleteRows = false;
             dgvParticipantes.BackgroundColor = Color.Linen;
             dgvParticipantes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvParticipantes.Columns.AddRange(new DataGridViewColumn[] { clmNumero, clmNombre, clmPais });
             dgvParticipantes.Location = new Point(25, 66);
             dgvParticipantes.Name = "dgvParticipantes";
+            dgvParticipantes.ReadOnly = true;
             dgvParticipantes.Size = new Size(343, 50);
             dgvParticipantes.TabIndex = 3;
+            // 
+            // clmNumero
+            // 
+            clmNumero.HeaderText = "Número";
+            clmNumero.Name = "clmNumero";
+            clmNumero.ReadOnly = true;
+            // 
+            // clmNombre
+            // 
+            clmNombre.HeaderText = "Nombre";
+            clmNombre.Name = "clmNombre";
+            clmNombre.ReadOnly = true;
+            // 
+            // clmPais
+            // 
+            clmPais.HeaderText = "País";
+            clmPais.Name = "clmPais";
+            clmPais.ReadOnly = true;
             // 
             // lblParticipantes
             // 
@@ -122,11 +144,14 @@
             // 
             // dataGridView1
             // 
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.AllowUserToDeleteRows = false;
             dataGridView1.BackgroundColor = Color.Linen;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { clmPrueba, clmParticipante1, clmParticipante2, clmParticipante3, clmParticipante4, clmParticipante5 });
             dataGridView1.Location = new Point(25, 184);
             dataGridView1.Name = "dataGridView1";
+            dataGridView1.ReadOnly = true;
             dataGridView1.Size = new Size(643, 105);
             dataGridView1.TabIndex = 6;
             // 
@@ -134,39 +159,48 @@
             // 
             clmPrueba.HeaderText = "Prueba";
             clmPrueba.Name = "clmPrueba";
+            clmPrueba.ReadOnly = true;
             // 
             // clmParticipante1
             // 
             clmParticipante1.HeaderText = "Participante 1";
             clmParticipante1.Name = "clmParticipante1";
+            clmParticipante1.ReadOnly = true;
             // 
             // clmParticipante2
             // 
             clmParticipante2.HeaderText = "Participante 2";
             clmParticipante2.Name = "clmParticipante2";
+            clmParticipante2.ReadOnly = true;
             // 
             // clmParticipante3
             // 
             clmParticipante3.HeaderText = "Participante 3";
             clmParticipante3.Name = "clmParticipante3";
+            clmParticipante3.ReadOnly = true;
             // 
             // clmParticipante4
             // 
             clmParticipante4.HeaderText = "Participante 4";
             clmParticipante4.Name = "clmParticipante4";
+            clmParticipante4.ReadOnly = true;
             // 
             // clmParticipante5
             // 
             clmParticipante5.HeaderText = "Participante 5";
             clmParticipante5.Name = "clmParticipante5";
+            clmParticipante5.ReadOnly = true;
             // 
             // dataGridView2
             // 
+            dataGridView2.AllowUserToAddRows = false;
+            dataGridView2.AllowUserToDeleteRows = false;
             dataGridView2.BackgroundColor = Color.Linen;
             dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView2.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, dataGridViewTextBoxColumn2, dataGridViewTextBoxColumn3, dataGridViewTextBoxColumn4, dataGridViewTextBoxColumn5, dataGridViewTextBoxColumn6 });
             dataGridView2.Location = new Point(25, 326);
             dataGridView2.Name = "dataGridView2";
+            dataGridView2.ReadOnly = true;
             dataGridView2.Size = new Size(643, 105);
             dataGridView2.TabIndex = 8;
             // 
@@ -174,31 +208,37 @@
             // 
             dataGridViewTextBoxColumn1.HeaderText = "Prueba";
             dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            dataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn2
             // 
             dataGridViewTextBoxColumn2.HeaderText = "Participante 1";
             dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            dataGridViewTextBoxColumn2.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn3
             // 
             dataGridViewTextBoxColumn3.HeaderText = "Participante 2";
             dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            dataGridViewTextBoxColumn3.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn4
             // 
             dataGridViewTextBoxColumn4.HeaderText = "Participante 3";
             dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            dataGridViewTextBoxColumn4.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn5
             // 
             dataGridViewTextBoxColumn5.HeaderText = "Participante 4";
             dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            dataGridViewTextBoxColumn5.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn6
             // 
             dataGridViewTextBoxColumn6.HeaderText = "Participante 5";
             dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            dataGridViewTextBoxColumn6.ReadOnly = true;
             // 
             // lblGanador
             // 
@@ -208,21 +248,6 @@
             lblGanador.Size = new Size(52, 15);
             lblGanador.TabIndex = 7;
             lblGanador.Text = "Ganador";
-            // 
-            // clmNumero
-            // 
-            clmNumero.HeaderText = "Número";
-            clmNumero.Name = "clmNumero";
-            // 
-            // clmNombre
-            // 
-            clmNombre.HeaderText = "Nombre";
-            clmNombre.Name = "clmNombre";
-            // 
-            // clmPais
-            // 
-            clmPais.HeaderText = "País";
-            clmPais.Name = "clmPais";
             // 
             // frmTriatlon
             // 
