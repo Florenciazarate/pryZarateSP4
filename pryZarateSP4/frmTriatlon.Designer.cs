@@ -48,13 +48,13 @@
             clmParticipante5 = new DataGridViewTextBoxColumn();
             clmParticipante6 = new DataGridViewTextBoxColumn();
             dgvGanador = new DataGridView();
-            lblGanador = new Label();
-            imgGanador = new PictureBox();
-            lblBienvenido = new Label();
             clmPuesto = new DataGridViewTextBoxColumn();
             clmNombreGanadores = new DataGridViewTextBoxColumn();
             clmPaisGanadores = new DataGridViewTextBoxColumn();
             clmPuntosGanadores = new DataGridViewTextBoxColumn();
+            lblGanador = new Label();
+            imgGanador = new PictureBox();
+            lblBienvenido = new Label();
             ((System.ComponentModel.ISupportInitialize)dgvParticipantes).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvPosiciones).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvGanador).BeginInit();
@@ -79,12 +79,13 @@
             btnDeterminar.BackColor = Color.DarkSeaGreen;
             btnDeterminar.FlatStyle = FlatStyle.System;
             btnDeterminar.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnDeterminar.Location = new Point(645, 273);
+            btnDeterminar.Location = new Point(645, 205);
             btnDeterminar.Name = "btnDeterminar";
             btnDeterminar.Size = new Size(239, 39);
             btnDeterminar.TabIndex = 1;
             btnDeterminar.Text = "Determinar ganadores";
             btnDeterminar.UseVisualStyleBackColor = false;
+            btnDeterminar.Click += btnDeterminar_Click;
             // 
             // btnSalir
             // 
@@ -226,6 +227,32 @@
             dgvGanador.Size = new Size(403, 190);
             dgvGanador.TabIndex = 8;
             // 
+            // clmPuesto
+            // 
+            clmPuesto.HeaderText = "Puesto";
+            clmPuesto.MaxInputLength = 30;
+            clmPuesto.Name = "clmPuesto";
+            clmPuesto.ReadOnly = true;
+            clmPuesto.Resizable = DataGridViewTriState.False;
+            // 
+            // clmNombreGanadores
+            // 
+            clmNombreGanadores.HeaderText = "Nombre";
+            clmNombreGanadores.Name = "clmNombreGanadores";
+            clmNombreGanadores.ReadOnly = true;
+            // 
+            // clmPaisGanadores
+            // 
+            clmPaisGanadores.HeaderText = "País";
+            clmPaisGanadores.Name = "clmPaisGanadores";
+            clmPaisGanadores.ReadOnly = true;
+            // 
+            // clmPuntosGanadores
+            // 
+            clmPuntosGanadores.HeaderText = "Puntos";
+            clmPuntosGanadores.Name = "clmPuntosGanadores";
+            clmPuntosGanadores.ReadOnly = true;
+            // 
             // lblGanador
             // 
             lblGanador.AutoSize = true;
@@ -257,32 +284,6 @@
             lblBienvenido.Size = new Size(281, 30);
             lblBienvenido.TabIndex = 10;
             lblBienvenido.Text = "Bienvenido al Triatlón 2025";
-            // 
-            // clmPuesto
-            // 
-            clmPuesto.HeaderText = "Puesto";
-            clmPuesto.MaxInputLength = 30;
-            clmPuesto.Name = "clmPuesto";
-            clmPuesto.ReadOnly = true;
-            clmPuesto.Resizable = DataGridViewTriState.False;
-            // 
-            // clmNombreGanadores
-            // 
-            clmNombreGanadores.HeaderText = "Nombre";
-            clmNombreGanadores.Name = "clmNombreGanadores";
-            clmNombreGanadores.ReadOnly = true;
-            // 
-            // clmPaisGanadores
-            // 
-            clmPaisGanadores.HeaderText = "País";
-            clmPaisGanadores.Name = "clmPaisGanadores";
-            clmPaisGanadores.ReadOnly = true;
-            // 
-            // clmPuntosGanadores
-            // 
-            clmPuntosGanadores.HeaderText = "Puntos";
-            clmPuntosGanadores.Name = "clmPuntosGanadores";
-            clmPuntosGanadores.ReadOnly = true;
             // 
             // frmTriatlon
             // 
