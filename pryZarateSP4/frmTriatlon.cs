@@ -21,5 +21,7 @@ namespace pryZarateSP4
         {
             this.Close();
         }
+
+      
     }
 }
