@@ -34,16 +34,19 @@
             btnSalir = new Button();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             dgvParticipantes = new DataGridView();
+            clmNumero = new DataGridViewTextBoxColumn();
+            clmNombre = new DataGridViewTextBoxColumn();
+            clmPais = new DataGridViewTextBoxColumn();
             lblParticipantes = new Label();
             lblPosiciones = new Label();
-            dataGridView1 = new DataGridView();
+            dgvPosiciones = new DataGridView();
             clmPrueba = new DataGridViewTextBoxColumn();
             clmParticipante1 = new DataGridViewTextBoxColumn();
             clmParticipante2 = new DataGridViewTextBoxColumn();
             clmParticipante3 = new DataGridViewTextBoxColumn();
             clmParticipante4 = new DataGridViewTextBoxColumn();
             clmParticipante5 = new DataGridViewTextBoxColumn();
-            dataGridView2 = new DataGridView();
+            dgvGanador = new DataGridView();
             dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn3 = new DataGridViewTextBoxColumn();
@@ -51,15 +54,12 @@
             dataGridViewTextBoxColumn5 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn6 = new DataGridViewTextBoxColumn();
             lblGanador = new Label();
-            pictureBox1 = new PictureBox();
+            imgGanador = new PictureBox();
             lblBienvenido = new Label();
-            clmNumero = new DataGridViewTextBoxColumn();
-            clmNombre = new DataGridViewTextBoxColumn();
-            clmPais = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dgvParticipantes).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvPosiciones).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvGanador).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)imgGanador).BeginInit();
             SuspendLayout();
             // 
             // btnAsignar
@@ -67,19 +67,20 @@
             btnAsignar.BackColor = Color.DarkSeaGreen;
             btnAsignar.FlatStyle = FlatStyle.System;
             btnAsignar.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnAsignar.Location = new Point(25, 302);
+            btnAsignar.Location = new Point(25, 273);
             btnAsignar.Name = "btnAsignar";
             btnAsignar.Size = new Size(239, 39);
             btnAsignar.TabIndex = 0;
             btnAsignar.Text = "Asignar participantes";
             btnAsignar.UseVisualStyleBackColor = false;
+            btnAsignar.Click += btnAsignar_Click;
             // 
             // btnDeterminar
             // 
             btnDeterminar.BackColor = Color.DarkSeaGreen;
             btnDeterminar.FlatStyle = FlatStyle.System;
             btnDeterminar.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnDeterminar.Location = new Point(645, 302);
+            btnDeterminar.Location = new Point(645, 273);
             btnDeterminar.Name = "btnDeterminar";
             btnDeterminar.Size = new Size(239, 39);
             btnDeterminar.TabIndex = 1;
@@ -108,8 +109,25 @@
             dgvParticipantes.Columns.AddRange(new DataGridViewColumn[] { clmNumero, clmNombre, clmPais });
             dgvParticipantes.Location = new Point(25, 90);
             dgvParticipantes.Name = "dgvParticipantes";
-            dgvParticipantes.Size = new Size(593, 206);
+            dgvParticipantes.Size = new Size(593, 177);
             dgvParticipantes.TabIndex = 3;
+            // 
+            // clmNumero
+            // 
+            clmNumero.HeaderText = "Número";
+            clmNumero.Name = "clmNumero";
+            // 
+            // clmNombre
+            // 
+            clmNombre.HeaderText = "Nombre";
+            clmNombre.Name = "clmNombre";
+            clmNombre.Width = 250;
+            // 
+            // clmPais
+            // 
+            clmPais.HeaderText = "País";
+            clmPais.Name = "clmPais";
+            clmPais.Width = 200;
             // 
             // lblParticipantes
             // 
@@ -131,17 +149,17 @@
             lblPosiciones.TabIndex = 5;
             lblPosiciones.Text = "Posiciónes";
             // 
-            // dataGridView1
+            // dgvPosiciones
             // 
-            dataGridView1.AllowUserToAddRows = false;
-            dataGridView1.AllowUserToDeleteRows = false;
-            dataGridView1.BackgroundColor = Color.Linen;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { clmPrueba, clmParticipante1, clmParticipante2, clmParticipante3, clmParticipante4, clmParticipante5 });
-            dataGridView1.Location = new Point(645, 90);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(643, 206);
-            dataGridView1.TabIndex = 6;
+            dgvPosiciones.AllowUserToAddRows = false;
+            dgvPosiciones.AllowUserToDeleteRows = false;
+            dgvPosiciones.BackgroundColor = Color.Linen;
+            dgvPosiciones.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvPosiciones.Columns.AddRange(new DataGridViewColumn[] { clmPrueba, clmParticipante1, clmParticipante2, clmParticipante3, clmParticipante4, clmParticipante5 });
+            dgvPosiciones.Location = new Point(645, 90);
+            dgvPosiciones.Name = "dgvPosiciones";
+            dgvPosiciones.Size = new Size(643, 177);
+            dgvPosiciones.TabIndex = 6;
             // 
             // clmPrueba
             // 
@@ -173,18 +191,18 @@
             clmParticipante5.HeaderText = "Participante 5";
             clmParticipante5.Name = "clmParticipante5";
             // 
-            // dataGridView2
+            // dgvGanador
             // 
-            dataGridView2.AllowUserToAddRows = false;
-            dataGridView2.AllowUserToDeleteRows = false;
-            dataGridView2.BackgroundColor = Color.Linen;
-            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, dataGridViewTextBoxColumn2, dataGridViewTextBoxColumn3, dataGridViewTextBoxColumn4, dataGridViewTextBoxColumn5, dataGridViewTextBoxColumn6 });
-            dataGridView2.Location = new Point(25, 409);
-            dataGridView2.Name = "dataGridView2";
-            dataGridView2.ReadOnly = true;
-            dataGridView2.Size = new Size(643, 162);
-            dataGridView2.TabIndex = 8;
+            dgvGanador.AllowUserToAddRows = false;
+            dgvGanador.AllowUserToDeleteRows = false;
+            dgvGanador.BackgroundColor = Color.Linen;
+            dgvGanador.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvGanador.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, dataGridViewTextBoxColumn2, dataGridViewTextBoxColumn3, dataGridViewTextBoxColumn4, dataGridViewTextBoxColumn5, dataGridViewTextBoxColumn6 });
+            dgvGanador.Location = new Point(25, 409);
+            dgvGanador.Name = "dgvGanador";
+            dgvGanador.ReadOnly = true;
+            dgvGanador.Size = new Size(643, 190);
+            dgvGanador.TabIndex = 8;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -233,15 +251,16 @@
             lblGanador.TabIndex = 7;
             lblGanador.Text = "Ganador";
             // 
-            // pictureBox1
+            // imgGanador
             // 
-            pictureBox1.Image = Properties.Resources.podio_jpg;
-            pictureBox1.Location = new Point(504, 447);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(164, 124);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 9;
-            pictureBox1.TabStop = false;
+            imgGanador.BorderStyle = BorderStyle.Fixed3D;
+            imgGanador.Image = Properties.Resources.imgPodio;
+            imgGanador.Location = new Point(674, 409);
+            imgGanador.Name = "imgGanador";
+            imgGanador.Size = new Size(243, 190);
+            imgGanador.SizeMode = PictureBoxSizeMode.StretchImage;
+            imgGanador.TabIndex = 9;
+            imgGanador.TabStop = false;
             // 
             // lblBienvenido
             // 
@@ -253,23 +272,6 @@
             lblBienvenido.TabIndex = 10;
             lblBienvenido.Text = "Bienvenido al Triatlón 2025";
             // 
-            // clmNumero
-            // 
-            clmNumero.HeaderText = "Número";
-            clmNumero.Name = "clmNumero";
-            // 
-            // clmNombre
-            // 
-            clmNombre.HeaderText = "Nombre";
-            clmNombre.Name = "clmNombre";
-            clmNombre.Width = 250;
-            // 
-            // clmPais
-            // 
-            clmPais.HeaderText = "País";
-            clmPais.Name = "clmPais";
-            clmPais.Width = 200;
-            // 
             // frmTriatlon
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -277,10 +279,10 @@
             BackColor = Color.Bisque;
             ClientSize = new Size(1313, 700);
             Controls.Add(lblBienvenido);
-            Controls.Add(pictureBox1);
-            Controls.Add(dataGridView2);
+            Controls.Add(imgGanador);
+            Controls.Add(dgvGanador);
             Controls.Add(lblGanador);
-            Controls.Add(dataGridView1);
+            Controls.Add(dgvPosiciones);
             Controls.Add(lblPosiciones);
             Controls.Add(lblParticipantes);
             Controls.Add(dgvParticipantes);
@@ -291,10 +293,11 @@
             Name = "frmTriatlon";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "frmTriatlon";
+            Load += frmTriatlon_Load;
             ((System.ComponentModel.ISupportInitialize)dgvParticipantes).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvPosiciones).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvGanador).EndInit();
+            ((System.ComponentModel.ISupportInitialize)imgGanador).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -308,14 +311,14 @@
         private DataGridView dgvParticipantes;
         private Label lblParticipantes;
         private Label lblPosiciones;
-        private DataGridView dataGridView1;
+        private DataGridView dgvPosiciones;
         private DataGridViewTextBoxColumn clmPrueba;
         private DataGridViewTextBoxColumn clmParticipante1;
         private DataGridViewTextBoxColumn clmParticipante2;
         private DataGridViewTextBoxColumn clmParticipante3;
         private DataGridViewTextBoxColumn clmParticipante4;
         private DataGridViewTextBoxColumn clmParticipante5;
-        private DataGridView dataGridView2;
+        private DataGridView dgvGanador;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
@@ -323,7 +326,7 @@
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private Label lblGanador;
-        private PictureBox pictureBox1;
+        private PictureBox imgGanador;
         private Label lblBienvenido;
         private DataGridViewTextBoxColumn clmNumero;
         private DataGridViewTextBoxColumn clmNombre;

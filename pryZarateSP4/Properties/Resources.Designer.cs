@@ -63,9 +63,9 @@ namespace pryZarateSP4.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap podio_jpg {
+        internal static System.Drawing.Bitmap imgPodio {
             get {
-                object obj = ResourceManager.GetObject("podio.jpg", resourceCulture);
+                object obj = ResourceManager.GetObject("imgPodio", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
