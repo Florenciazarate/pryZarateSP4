@@ -55,6 +55,7 @@
             lblGanador = new Label();
             imgGanador = new PictureBox();
             lblBienvenido = new Label();
+            lblFrase = new Label();
             ((System.ComponentModel.ISupportInitialize)dgvParticipantes).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvPosiciones).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvGanador).BeginInit();
@@ -285,12 +286,23 @@
             lblBienvenido.TabIndex = 10;
             lblBienvenido.Text = "Bienvenido al Triatlón 2025";
             // 
+            // lblFrase
+            // 
+            lblFrase.AutoSize = true;
+            lblFrase.Font = new Font("Palatino Linotype", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblFrase.Location = new Point(25, 647);
+            lblFrase.Name = "lblFrase";
+            lblFrase.Size = new Size(931, 37);
+            lblFrase.TabIndex = 11;
+            lblFrase.Text = "\"El éxito suele llegar a quienes están demasiado ocupados para buscarlo\"";
+            // 
             // frmTriatlon
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Bisque;
             ClientSize = new Size(1364, 700);
+            Controls.Add(lblFrase);
             Controls.Add(lblBienvenido);
             Controls.Add(imgGanador);
             Controls.Add(dgvGanador);
@@ -343,5 +355,6 @@
         private DataGridViewTextBoxColumn clmNombreGanadores;
         private DataGridViewTextBoxColumn clmPaisGanadores;
         private DataGridViewTextBoxColumn clmPuntosGanadores;
+        private Label lblFrase;
     }
 }
