@@ -34,9 +34,6 @@
             btnSalir = new Button();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             dgvParticipantes = new DataGridView();
-            clmNumero = new DataGridViewTextBoxColumn();
-            clmNombre = new DataGridViewTextBoxColumn();
-            clmPais = new DataGridViewTextBoxColumn();
             lblParticipantes = new Label();
             lblPosiciones = new Label();
             dataGridView1 = new DataGridView();
@@ -56,6 +53,9 @@
             lblGanador = new Label();
             pictureBox1 = new PictureBox();
             lblBienvenido = new Label();
+            clmNumero = new DataGridViewTextBoxColumn();
+            clmNombre = new DataGridViewTextBoxColumn();
+            clmPais = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dgvParticipantes).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
@@ -65,11 +65,11 @@
             // btnAsignar
             // 
             btnAsignar.BackColor = Color.DarkSeaGreen;
-            btnAsignar.FlatStyle = FlatStyle.Popup;
-            btnAsignar.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnAsignar.Location = new Point(374, 254);
+            btnAsignar.FlatStyle = FlatStyle.System;
+            btnAsignar.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnAsignar.Location = new Point(25, 302);
             btnAsignar.Name = "btnAsignar";
-            btnAsignar.Size = new Size(132, 54);
+            btnAsignar.Size = new Size(239, 39);
             btnAsignar.TabIndex = 0;
             btnAsignar.Text = "Asignar participantes";
             btnAsignar.UseVisualStyleBackColor = false;
@@ -77,11 +77,11 @@
             // btnDeterminar
             // 
             btnDeterminar.BackColor = Color.DarkSeaGreen;
-            btnDeterminar.FlatStyle = FlatStyle.Popup;
-            btnDeterminar.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnDeterminar.Location = new Point(25, 614);
+            btnDeterminar.FlatStyle = FlatStyle.System;
+            btnDeterminar.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnDeterminar.Location = new Point(645, 302);
             btnDeterminar.Name = "btnDeterminar";
-            btnDeterminar.Size = new Size(151, 35);
+            btnDeterminar.Size = new Size(239, 39);
             btnDeterminar.TabIndex = 1;
             btnDeterminar.Text = "Determinar ganadores";
             btnDeterminar.UseVisualStyleBackColor = false;
@@ -90,10 +90,10 @@
             // 
             btnSalir.BackColor = Color.DarkSeaGreen;
             btnSalir.FlatStyle = FlatStyle.Popup;
-            btnSalir.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnSalir.Location = new Point(536, 892);
+            btnSalir.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnSalir.Location = new Point(1049, 649);
             btnSalir.Name = "btnSalir";
-            btnSalir.Size = new Size(132, 30);
+            btnSalir.Size = new Size(239, 39);
             btnSalir.TabIndex = 2;
             btnSalir.Text = "Salir";
             btnSalir.UseVisualStyleBackColor = false;
@@ -101,35 +101,21 @@
             // 
             // dgvParticipantes
             // 
+            dgvParticipantes.AllowUserToAddRows = false;
             dgvParticipantes.AllowUserToDeleteRows = false;
             dgvParticipantes.BackgroundColor = Color.Linen;
             dgvParticipantes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvParticipantes.Columns.AddRange(new DataGridViewColumn[] { clmNumero, clmNombre, clmPais });
-            dgvParticipantes.Location = new Point(25, 102);
+            dgvParticipantes.Location = new Point(25, 90);
             dgvParticipantes.Name = "dgvParticipantes";
-            dgvParticipantes.Size = new Size(343, 206);
+            dgvParticipantes.Size = new Size(593, 206);
             dgvParticipantes.TabIndex = 3;
-            // 
-            // clmNumero
-            // 
-            clmNumero.HeaderText = "Número";
-            clmNumero.Name = "clmNumero";
-            // 
-            // clmNombre
-            // 
-            clmNombre.HeaderText = "Nombre";
-            clmNombre.Name = "clmNombre";
-            // 
-            // clmPais
-            // 
-            clmPais.HeaderText = "País";
-            clmPais.Name = "clmPais";
             // 
             // lblParticipantes
             // 
             lblParticipantes.AutoSize = true;
             lblParticipantes.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblParticipantes.Location = new Point(25, 71);
+            lblParticipantes.Location = new Point(25, 59);
             lblParticipantes.Name = "lblParticipantes";
             lblParticipantes.Size = new Size(104, 21);
             lblParticipantes.TabIndex = 4;
@@ -139,7 +125,7 @@
             // 
             lblPosiciones.AutoSize = true;
             lblPosiciones.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblPosiciones.Location = new Point(25, 340);
+            lblPosiciones.Location = new Point(645, 59);
             lblPosiciones.Name = "lblPosiciones";
             lblPosiciones.Size = new Size(86, 21);
             lblPosiciones.TabIndex = 5;
@@ -152,47 +138,40 @@
             dataGridView1.BackgroundColor = Color.Linen;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { clmPrueba, clmParticipante1, clmParticipante2, clmParticipante3, clmParticipante4, clmParticipante5 });
-            dataGridView1.Location = new Point(25, 372);
+            dataGridView1.Location = new Point(645, 90);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.ReadOnly = true;
-            dataGridView1.Size = new Size(643, 236);
+            dataGridView1.Size = new Size(643, 206);
             dataGridView1.TabIndex = 6;
             // 
             // clmPrueba
             // 
             clmPrueba.HeaderText = "Prueba";
             clmPrueba.Name = "clmPrueba";
-            clmPrueba.ReadOnly = true;
             // 
             // clmParticipante1
             // 
             clmParticipante1.HeaderText = "Participante 1";
             clmParticipante1.Name = "clmParticipante1";
-            clmParticipante1.ReadOnly = true;
             // 
             // clmParticipante2
             // 
             clmParticipante2.HeaderText = "Participante 2";
             clmParticipante2.Name = "clmParticipante2";
-            clmParticipante2.ReadOnly = true;
             // 
             // clmParticipante3
             // 
             clmParticipante3.HeaderText = "Participante 3";
             clmParticipante3.Name = "clmParticipante3";
-            clmParticipante3.ReadOnly = true;
             // 
             // clmParticipante4
             // 
             clmParticipante4.HeaderText = "Participante 4";
             clmParticipante4.Name = "clmParticipante4";
-            clmParticipante4.ReadOnly = true;
             // 
             // clmParticipante5
             // 
             clmParticipante5.HeaderText = "Participante 5";
             clmParticipante5.Name = "clmParticipante5";
-            clmParticipante5.ReadOnly = true;
             // 
             // dataGridView2
             // 
@@ -201,7 +180,7 @@
             dataGridView2.BackgroundColor = Color.Linen;
             dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView2.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, dataGridViewTextBoxColumn2, dataGridViewTextBoxColumn3, dataGridViewTextBoxColumn4, dataGridViewTextBoxColumn5, dataGridViewTextBoxColumn6 });
-            dataGridView2.Location = new Point(25, 701);
+            dataGridView2.Location = new Point(25, 409);
             dataGridView2.Name = "dataGridView2";
             dataGridView2.ReadOnly = true;
             dataGridView2.Size = new Size(643, 162);
@@ -246,17 +225,18 @@
             // lblGanador
             // 
             lblGanador.AutoSize = true;
-            lblGanador.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblGanador.Location = new Point(25, 673);
+            lblGanador.FlatStyle = FlatStyle.System;
+            lblGanador.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblGanador.Location = new Point(25, 376);
             lblGanador.Name = "lblGanador";
-            lblGanador.Size = new Size(72, 21);
+            lblGanador.Size = new Size(97, 30);
             lblGanador.TabIndex = 7;
             lblGanador.Text = "Ganador";
             // 
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.podio_jpg;
-            pictureBox1.Location = new Point(504, 739);
+            pictureBox1.Location = new Point(504, 447);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(164, 124);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -273,12 +253,29 @@
             lblBienvenido.TabIndex = 10;
             lblBienvenido.Text = "Bienvenido al Triatlón 2025";
             // 
+            // clmNumero
+            // 
+            clmNumero.HeaderText = "Número";
+            clmNumero.Name = "clmNumero";
+            // 
+            // clmNombre
+            // 
+            clmNombre.HeaderText = "Nombre";
+            clmNombre.Name = "clmNombre";
+            clmNombre.Width = 250;
+            // 
+            // clmPais
+            // 
+            clmPais.HeaderText = "País";
+            clmPais.Name = "clmPais";
+            clmPais.Width = 200;
+            // 
             // frmTriatlon
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Bisque;
-            ClientSize = new Size(707, 975);
+            ClientSize = new Size(1313, 700);
             Controls.Add(lblBienvenido);
             Controls.Add(pictureBox1);
             Controls.Add(dataGridView2);
@@ -326,10 +323,10 @@
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private Label lblGanador;
+        private PictureBox pictureBox1;
+        private Label lblBienvenido;
         private DataGridViewTextBoxColumn clmNumero;
         private DataGridViewTextBoxColumn clmNombre;
         private DataGridViewTextBoxColumn clmPais;
-        private PictureBox pictureBox1;
-        private Label lblBienvenido;
     }
 }
