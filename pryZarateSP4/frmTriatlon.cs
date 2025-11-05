@@ -105,9 +105,7 @@ namespace pryZarateSP4
                 {
                     for (col = 0; col < 6; col++)
                     {
-
-                        valor = dgvPosiciones.Rows[fila].Cells[col + 1].Value.ToString();
-                        puestos[fila, col] = int.Parse(valor);
+                        puestos[fila, col] = Convert.ToInt32(dgvPosiciones.Rows[fila].Cells[col + 1].Value);
                     }
                 }
                 DATOS[] datos = new DATOS[6];
