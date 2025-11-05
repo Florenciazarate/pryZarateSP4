@@ -66,12 +66,10 @@ namespace pryZarateSP4
             {
                 dgvPosiciones.Columns[i + 1].HeaderText = dgvParticipantes.Rows[i].Cells[1].Value.ToString();
             }
-
             for (i = 0; i < 3; i++)
             {
                 dgvPosiciones.Rows.Add();
             }
-
             dgvPosiciones.Rows[0].Cells[0].Value = "Natación";
             dgvPosiciones.Rows[1].Cells[0].Value = "Ciclismo";
             dgvPosiciones.Rows[2].Cells[0].Value = "Carrera";
