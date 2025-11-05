@@ -25,6 +25,7 @@ namespace pryZarateSP4
 
         private void frmTriatlon_Load(object sender, EventArgs e)
         {
+            btnDeterminar.Enabled = false;
             int i;
             for (i = 1; i <= 6; i++)
             {
@@ -77,6 +78,7 @@ namespace pryZarateSP4
             dgvPosiciones.Columns[0].ReadOnly = true;
             dgvParticipantes.ClearSelection();
             dgvPosiciones.Enabled = true;
+            btnDeterminar.Enabled = true;
         }
     }
 }
