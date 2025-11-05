@@ -48,13 +48,13 @@
             clmParticipante5 = new DataGridViewTextBoxColumn();
             clmParticipante6 = new DataGridViewTextBoxColumn();
             dgvGanador = new DataGridView();
+            lblGanador = new Label();
+            imgGanador = new PictureBox();
+            lblBienvenido = new Label();
             clmPuesto = new DataGridViewTextBoxColumn();
             clmNombreGanadores = new DataGridViewTextBoxColumn();
             clmPaisGanadores = new DataGridViewTextBoxColumn();
             clmPuntosGanadores = new DataGridViewTextBoxColumn();
-            lblGanador = new Label();
-            imgGanador = new PictureBox();
-            lblBienvenido = new Label();
             ((System.ComponentModel.ISupportInitialize)dgvParticipantes).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvPosiciones).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvGanador).BeginInit();
@@ -91,7 +91,7 @@
             btnSalir.BackColor = Color.DarkSeaGreen;
             btnSalir.FlatStyle = FlatStyle.System;
             btnSalir.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnSalir.Location = new Point(1049, 649);
+            btnSalir.Location = new Point(1109, 649);
             btnSalir.Name = "btnSalir";
             btnSalir.Size = new Size(239, 39);
             btnSalir.TabIndex = 2;
@@ -165,7 +165,7 @@
             dgvPosiciones.Location = new Point(645, 90);
             dgvPosiciones.Name = "dgvPosiciones";
             dgvPosiciones.RowHeadersVisible = false;
-            dgvPosiciones.Size = new Size(703, 177);
+            dgvPosiciones.Size = new Size(703, 109);
             dgvPosiciones.TabIndex = 6;
             // 
             // clmPrueba
@@ -223,34 +223,8 @@
             dgvGanador.Name = "dgvGanador";
             dgvGanador.ReadOnly = true;
             dgvGanador.RowHeadersVisible = false;
-            dgvGanador.Size = new Size(402, 190);
+            dgvGanador.Size = new Size(403, 190);
             dgvGanador.TabIndex = 8;
-            // 
-            // clmPuesto
-            // 
-            clmPuesto.HeaderText = "Puesto";
-            clmPuesto.MaxInputLength = 30;
-            clmPuesto.Name = "clmPuesto";
-            clmPuesto.ReadOnly = true;
-            clmPuesto.Resizable = DataGridViewTriState.False;
-            // 
-            // clmNombreGanadores
-            // 
-            clmNombreGanadores.HeaderText = "Nombre";
-            clmNombreGanadores.Name = "clmNombreGanadores";
-            clmNombreGanadores.ReadOnly = true;
-            // 
-            // clmPaisGanadores
-            // 
-            clmPaisGanadores.HeaderText = "País";
-            clmPaisGanadores.Name = "clmPaisGanadores";
-            clmPaisGanadores.ReadOnly = true;
-            // 
-            // clmPuntosGanadores
-            // 
-            clmPuntosGanadores.HeaderText = "Ganadores";
-            clmPuntosGanadores.Name = "clmPuntosGanadores";
-            clmPuntosGanadores.ReadOnly = true;
             // 
             // lblGanador
             // 
@@ -283,6 +257,32 @@
             lblBienvenido.Size = new Size(281, 30);
             lblBienvenido.TabIndex = 10;
             lblBienvenido.Text = "Bienvenido al Triatlón 2025";
+            // 
+            // clmPuesto
+            // 
+            clmPuesto.HeaderText = "Puesto";
+            clmPuesto.MaxInputLength = 30;
+            clmPuesto.Name = "clmPuesto";
+            clmPuesto.ReadOnly = true;
+            clmPuesto.Resizable = DataGridViewTriState.False;
+            // 
+            // clmNombreGanadores
+            // 
+            clmNombreGanadores.HeaderText = "Nombre";
+            clmNombreGanadores.Name = "clmNombreGanadores";
+            clmNombreGanadores.ReadOnly = true;
+            // 
+            // clmPaisGanadores
+            // 
+            clmPaisGanadores.HeaderText = "País";
+            clmPaisGanadores.Name = "clmPaisGanadores";
+            clmPaisGanadores.ReadOnly = true;
+            // 
+            // clmPuntosGanadores
+            // 
+            clmPuntosGanadores.HeaderText = "Puntos";
+            clmPuntosGanadores.Name = "clmPuntosGanadores";
+            clmPuntosGanadores.ReadOnly = true;
             // 
             // frmTriatlon
             // 
@@ -331,10 +331,6 @@
         private DataGridViewTextBoxColumn clmNumero;
         private DataGridViewTextBoxColumn clmNombre;
         private DataGridViewTextBoxColumn clmPais;
-        private DataGridViewTextBoxColumn clmPuesto;
-        private DataGridViewTextBoxColumn clmNombreGanadores;
-        private DataGridViewTextBoxColumn clmPaisGanadores;
-        private DataGridViewTextBoxColumn clmPuntosGanadores;
         private DataGridViewTextBoxColumn clmPrueba;
         private DataGridViewTextBoxColumn clmParticipante1;
         private DataGridViewTextBoxColumn clmParticipante2;
@@ -342,5 +338,9 @@
         private DataGridViewTextBoxColumn clmParticipante4;
         private DataGridViewTextBoxColumn clmParticipante5;
         private DataGridViewTextBoxColumn clmParticipante6;
+        private DataGridViewTextBoxColumn clmPuesto;
+        private DataGridViewTextBoxColumn clmNombreGanadores;
+        private DataGridViewTextBoxColumn clmPaisGanadores;
+        private DataGridViewTextBoxColumn clmPuntosGanadores;
     }
 }
