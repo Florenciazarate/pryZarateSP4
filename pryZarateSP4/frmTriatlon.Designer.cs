@@ -289,12 +289,12 @@
             // lblFrase
             // 
             lblFrase.AutoSize = true;
-            lblFrase.Font = new Font("Palatino Linotype", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblFrase.Location = new Point(25, 647);
+            lblFrase.Font = new Font("Perpetua Titling MT", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblFrase.Location = new Point(25, 345);
             lblFrase.Name = "lblFrase";
-            lblFrase.Size = new Size(931, 37);
+            lblFrase.Size = new Size(1195, 32);
             lblFrase.TabIndex = 11;
-            lblFrase.Text = "\"El éxito suele llegar a quienes están demasiado ocupados para buscarlo\"";
+            lblFrase.Text = "\"El éxito solo llega a quienes estan demasiado ocupados buscandolos\"";
             // 
             // frmTriatlon
             // 
