@@ -290,7 +290,7 @@
             // 
             lblFrase.AutoSize = true;
             lblFrase.Font = new Font("Perpetua Titling MT", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblFrase.Location = new Point(25, 345);
+            lblFrase.Location = new Point(25, 343);
             lblFrase.Name = "lblFrase";
             lblFrase.Size = new Size(1195, 32);
             lblFrase.TabIndex = 11;
