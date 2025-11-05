@@ -52,17 +52,17 @@ namespace pryZarateSP4
                 var nacionalidad = dgvParticipantes.Rows[i].Cells[2].Value?.ToString();
                 if (string.IsNullOrWhiteSpace(nombre) || string.IsNullOrWhiteSpace(nacionalidad))
                 {
-                    MessageBox.Show("Debe completar los datos de todos los participantes", "Error", MessageBoxButtons.OK);
+                    MessageBox.Show("Debe completar los datos de todos los participantes", "Registro de datos", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return;
                 }
                 if (!Regex.IsMatch(nombre, @"^[a-zA-Z\s]{3,}$") || !Regex.IsMatch(nacionalidad, @"^[a-zA-Z\s]{3,}$"))
                 {
-                    MessageBox.Show("Los campos solo deben tener letras (mínimo 3 caracteres).", "Error", MessageBoxButtons.OK);
+                    MessageBox.Show("Los campos solo deben tener letras (mínimo 3 caracteres).", "Registro de datos", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return;
                 }
                 if (nombresUsados.Contains(nombre) && nacionalidadesUsadas.Contains(nacionalidad))
                 {
-                    MessageBox.Show("Duplicado de persona.", "Error", MessageBoxButtons.OK);
+                    MessageBox.Show("Duplicado de persona.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
                 nombresUsados.Add(nombre);
@@ -95,8 +95,8 @@ namespace pryZarateSP4
                 string nacionalidad;
                 if (!ValidarPosiciones())
                 {
-                    MessageBox.Show("Los datos son incorrectos, revise las posiciones asignadas",
-                    "Error", MessageBoxButtons.OK);
+                    MessageBox.Show("Los datos son incorrectos",
+                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return;
                 }
                 dgvPosiciones.ClearSelection();
@@ -154,7 +154,7 @@ namespace pryZarateSP4
                     if (celda == null || !int.TryParse(celda.ToString(), out valor) || valor < 1 || valor > 6)
                     {
                         MessageBox.Show("Solo se permiten números del 1 al 6.",
-                                        "Error de datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                        "Error de datos", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         return false;
                     }
                     for (i = c + 1; i < dgvPosiciones.ColumnCount; i++)
@@ -165,7 +165,7 @@ namespace pryZarateSP4
                             valor == valorComparar)
                         {
                             MessageBox.Show($"Valor repetido ({valor}) en la fila {f + 1}.",
-                                            "Error de datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                            "Error de datos", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             return false;
                         }
                     }
