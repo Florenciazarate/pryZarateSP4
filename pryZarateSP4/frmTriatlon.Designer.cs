@@ -55,6 +55,7 @@
             lblGanador = new Label();
             imgGanador = new PictureBox();
             lblBienvenido = new Label();
+            lblFrase = new Label();
             ((System.ComponentModel.ISupportInitialize)dgvParticipantes).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvPosiciones).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvGanador).BeginInit();
@@ -63,8 +64,8 @@
             // 
             // btnAsignar
             // 
-            btnAsignar.BackColor = Color.DarkSeaGreen;
-            btnAsignar.FlatStyle = FlatStyle.System;
+            btnAsignar.BackColor = Color.Ivory;
+            btnAsignar.FlatStyle = FlatStyle.Popup;
             btnAsignar.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnAsignar.Location = new Point(25, 273);
             btnAsignar.Name = "btnAsignar";
@@ -76,8 +77,8 @@
             // 
             // btnDeterminar
             // 
-            btnDeterminar.BackColor = Color.DarkSeaGreen;
-            btnDeterminar.FlatStyle = FlatStyle.System;
+            btnDeterminar.BackColor = Color.Ivory;
+            btnDeterminar.FlatStyle = FlatStyle.Popup;
             btnDeterminar.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnDeterminar.Location = new Point(645, 205);
             btnDeterminar.Name = "btnDeterminar";
@@ -89,8 +90,8 @@
             // 
             // btnSalir
             // 
-            btnSalir.BackColor = Color.DarkSeaGreen;
-            btnSalir.FlatStyle = FlatStyle.System;
+            btnSalir.BackColor = Color.Ivory;
+            btnSalir.FlatStyle = FlatStyle.Popup;
             btnSalir.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnSalir.Location = new Point(1109, 649);
             btnSalir.Name = "btnSalir";
@@ -220,7 +221,7 @@
             dgvGanador.BackgroundColor = Color.Linen;
             dgvGanador.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvGanador.Columns.AddRange(new DataGridViewColumn[] { clmPuesto, clmNombreGanadores, clmPaisGanadores, clmPuntosGanadores });
-            dgvGanador.Location = new Point(25, 409);
+            dgvGanador.Location = new Point(25, 474);
             dgvGanador.Name = "dgvGanador";
             dgvGanador.ReadOnly = true;
             dgvGanador.RowHeadersVisible = false;
@@ -258,7 +259,7 @@
             lblGanador.AutoSize = true;
             lblGanador.FlatStyle = FlatStyle.System;
             lblGanador.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblGanador.Location = new Point(25, 376);
+            lblGanador.Location = new Point(25, 441);
             lblGanador.Name = "lblGanador";
             lblGanador.Size = new Size(97, 30);
             lblGanador.TabIndex = 7;
@@ -285,12 +286,23 @@
             lblBienvenido.TabIndex = 10;
             lblBienvenido.Text = "Bienvenido al Triatlón 2025";
             // 
+            // lblFrase
+            // 
+            lblFrase.AutoSize = true;
+            lblFrase.Font = new Font("Perpetua Titling MT", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblFrase.Location = new Point(25, 343);
+            lblFrase.Name = "lblFrase";
+            lblFrase.Size = new Size(1195, 32);
+            lblFrase.TabIndex = 11;
+            lblFrase.Text = "\"El éxito solo llega a quienes estan demasiado ocupados buscandolos\"";
+            // 
             // frmTriatlon
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Bisque;
-            ClientSize = new Size(1365, 700);
+            ClientSize = new Size(1364, 700);
+            Controls.Add(lblFrase);
             Controls.Add(lblBienvenido);
             Controls.Add(imgGanador);
             Controls.Add(dgvGanador);
@@ -343,5 +355,6 @@
         private DataGridViewTextBoxColumn clmNombreGanadores;
         private DataGridViewTextBoxColumn clmPaisGanadores;
         private DataGridViewTextBoxColumn clmPuntosGanadores;
+        private Label lblFrase;
     }
 }

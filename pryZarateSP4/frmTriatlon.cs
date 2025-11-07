@@ -52,17 +52,17 @@ namespace pryZarateSP4
                 var nacionalidad = dgvParticipantes.Rows[i].Cells[2].Value?.ToString();
                 if (string.IsNullOrWhiteSpace(nombre) || string.IsNullOrWhiteSpace(nacionalidad))
                 {
-                    MessageBox.Show("Debe completar los datos de todos los participantes", "Error", MessageBoxButtons.OK);
+                    MessageBox.Show("Debe completar los datos de todos los participantes", "Registro de datos", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return;
                 }
                 if (!Regex.IsMatch(nombre, @"^[a-zA-Z\s]{3,}$") || !Regex.IsMatch(nacionalidad, @"^[a-zA-Z\s]{3,}$"))
                 {
-                    MessageBox.Show("Los campos solo deben tener letras (mínimo 3 caracteres).", "Error", MessageBoxButtons.OK);
+                    MessageBox.Show("Los campos solo deben tener letras (mínimo 3 caracteres).", "Registro de datos", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return;
                 }
                 if (nombresUsados.Contains(nombre) && nacionalidadesUsadas.Contains(nacionalidad))
                 {
-                    MessageBox.Show("Duplicado de persona.", "Error", MessageBoxButtons.OK);
+                    MessageBox.Show("Duplicado de persona.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
                 nombresUsados.Add(nombre);
