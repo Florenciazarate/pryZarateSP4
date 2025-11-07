@@ -95,8 +95,6 @@ namespace pryZarateSP4
                 string nacionalidad;
                 if (!ValidarPosiciones())
                 {
-                    MessageBox.Show("Los datos son incorrectos, revise las posiciones asignadas",
-                    "Error", MessageBoxButtons.OK);
                     return;
                 }
                 dgvPosiciones.ClearSelection();
@@ -145,7 +143,14 @@ namespace pryZarateSP4
         {
             int f, c, i;
             int valor;
-
+            bool hayError = false;
+            foreach (DataGridViewRow fila in dgvPosiciones.Rows)
+            {
+                foreach (DataGridViewCell celda in fila.Cells)
+                {
+                    celda.Style.BackColor = Color.White;
+                }
+            }
             for (f = 0; f < dgvPosiciones.RowCount; f++)
             {
                 for (c = 1; c < dgvPosiciones.ColumnCount; c++)
@@ -153,9 +158,9 @@ namespace pryZarateSP4
                     var celda = dgvPosiciones.Rows[f].Cells[c].Value;
                     if (celda == null || !int.TryParse(celda.ToString(), out valor) || valor < 1 || valor > 6)
                     {
-                        MessageBox.Show("Solo se permiten números del 1 al 6.",
-                                        "Error de datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return false;
+                        dgvPosiciones.Rows[f].Cells[c].Style.BackColor = Color.LightCoral;
+                        hayError = true;
+                        continue; 
                     }
                     for (i = c + 1; i < dgvPosiciones.ColumnCount; i++)
                     {
@@ -164,12 +169,18 @@ namespace pryZarateSP4
                             int.TryParse(celdaComparar.ToString(), out int valorComparar) &&
                             valor == valorComparar)
                         {
-                            MessageBox.Show($"Valor repetido ({valor}) en la fila {f + 1}.",
-                                            "Error de datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            return false;
+                            dgvPosiciones.Rows[f].Cells[c].Style.BackColor = Color.LightCoral;
+                            dgvPosiciones.Rows[f].Cells[i].Style.BackColor = Color.LightCoral;
+                            hayError = true;
                         }
                     }
                 }
+            }
+            if (hayError)
+            {
+                MessageBox.Show("Existen celdas con errores. Revise las posiciones marcadas en rojo.",
+                                "Error de datos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return false;
             }
             return true;
         }
