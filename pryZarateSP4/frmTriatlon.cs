@@ -44,41 +44,68 @@ namespace pryZarateSP4
         {
             int i;
             dgvPosiciones.Rows.Clear();
+            foreach (DataGridViewRow fila in dgvParticipantes.Rows)
+            {
+                foreach (DataGridViewCell celda in fila.Cells)
+                {
+                    celda.Style.BackColor = Color.White;
+                }
+            }
+
             List<string> nombresUsados = new List<string>();
             List<string> nacionalidadesUsadas = new List<string>();
+            bool hayError = false;
+
             for (i = 0; i < 6; i++)
             {
                 var nombre = dgvParticipantes.Rows[i].Cells[1].Value?.ToString();
                 var nacionalidad = dgvParticipantes.Rows[i].Cells[2].Value?.ToString();
                 if (string.IsNullOrWhiteSpace(nombre) || string.IsNullOrWhiteSpace(nacionalidad))
                 {
-                    MessageBox.Show("Debe completar los datos de todos los participantes", "Registro de datos", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    return;
+                    dgvParticipantes.Rows[i].Cells[1].Style.BackColor = Color.LightCoral;
+                    dgvParticipantes.Rows[i].Cells[2].Style.BackColor = Color.LightCoral;
+                    hayError = true;
+                    continue;
                 }
-                if (!Regex.IsMatch(nombre, @"^[a-zA-Z\s]{3,}$") || !Regex.IsMatch(nacionalidad, @"^[a-zA-Z\s]{3,}$"))
+                if (!Regex.IsMatch(nombre, @"^[a-zA-Z\s]{3,}$"))
                 {
-                    MessageBox.Show("Los campos solo deben tener letras (mínimo 3 caracteres).", "Registro de datos", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    return;
+                    dgvParticipantes.Rows[i].Cells[1].Style.BackColor = Color.LightCoral;
+                    hayError = true;
+                }
+                if (!Regex.IsMatch(nacionalidad, @"^[a-zA-Z\s]{3,}$"))
+                {
+                    dgvParticipantes.Rows[i].Cells[2].Style.BackColor = Color.LightCoral;
+                    hayError = true;
                 }
                 if (nombresUsados.Contains(nombre) && nacionalidadesUsadas.Contains(nacionalidad))
                 {
-                    MessageBox.Show("Duplicado de persona.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
+                    dgvParticipantes.Rows[i].Cells[1].Style.BackColor = Color.LightCoral;
+                    dgvParticipantes.Rows[i].Cells[2].Style.BackColor = Color.LightCoral;
+                    hayError = true;
                 }
                 nombresUsados.Add(nombre);
                 nacionalidadesUsadas.Add(nacionalidad);
+            }
+            if (hayError)
+            {
+                MessageBox.Show("Existen errores en los datos de los participantes. Revise las celdas marcadas en rojo.",
+                                "Error de validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
             for (i = 0; i < 6; i++)
             {
                 dgvPosiciones.Columns[i + 1].HeaderText = dgvParticipantes.Rows[i].Cells[1].Value.ToString();
             }
+
             for (i = 0; i < 3; i++)
             {
                 dgvPosiciones.Rows.Add();
             }
+
             dgvPosiciones.Rows[0].Cells[0].Value = "Natación";
             dgvPosiciones.Rows[1].Cells[0].Value = "Ciclismo";
             dgvPosiciones.Rows[2].Cells[0].Value = "Carrera";
+
             dgvPosiciones.Columns[0].ReadOnly = true;
             dgvParticipantes.ClearSelection();
             dgvPosiciones.Enabled = true;
